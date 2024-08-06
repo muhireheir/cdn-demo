@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Test CDN</title>
+    <meta charset="UTF-8" />
+    <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" /> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script
+      src="https://static.staticsave.com/cdnfolder/hikr-cdn.js"
+      defer
+    ></script>
+  </head>
+
+  <body class="">
+    <div
+      class="flex h-screen w-screen justify-center items-center bg-blue-200 flex-col"
+    >
+      <h1 class="text-3xl font-bold">CDN Demo</h1>
+      <!-- Contents -->
+      <div class="text-[100px]">😎</div>
+      <a href="second.html">Second Page</a>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        hikr.config({
+          websiteId: "4996094772"
+        });
+      });
+    </script>
+  </body>
+</html>

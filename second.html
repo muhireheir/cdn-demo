@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Marketing Landing Page</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      h1 {
+        color: #333;
+        text-align: center;
+      }
+
+      .button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+      }
+
+      .form-container {
+        margin-top: 20px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+      }
+
+      .form-container input[type="text"],
+      .form-container input[type="email"],
+      .form-container input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+    </style>
+
+    <script src="http://localhost:9000/script.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        hikr.config({
+          websiteId: "4996094772",
+          userConsent: true,
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <nav>
+      <a href="index.html">Back to Home</a>
+    </nav>
+
+    <div class="container">
+      <h1>Welcome to our Marketing Landing Page!</h1>
+
+      <div>
+        <button class="button" type="button" name="button1">button 1</button>
+        <button class="button" type="reset" name="button2">button 2</button>
+      </div>
+
+      <div class="form-container">
+        <h2>Get in touch</h2>
+        <form action="https://localhost:4000/api/cdn/{endpoint}" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <button value="Submit" id="formSubmit" type="submit" class="button">
+            FormSubmit
+          </button>
+        </form>
+        <button value="Submit" id="submit" type="menu" class="button">
+          Submit
+        </button>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", async function () {
+        console.log("Initializing pushData");
+        try {
+          await hikr.pushData({
+            eventType: "click",
+            collectionName: "userInteractions",
+            data: "Test Data",
+            userConsent: false,
+          });
+          console.log("pushData executed");
+        } catch (error) {
+          console.error("Error executing pushData:", error);
+        }
+      });
+    </script>
+  </body>
+</html>
